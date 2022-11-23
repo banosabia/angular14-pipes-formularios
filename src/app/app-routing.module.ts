@@ -1,7 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+//Componentes
+import { FormularioReactivoComponent } from './components/formularios/formulario-reactivo/formulario-reactivo.component';
+import { FormularioTemplateComponent } from './components/formularios/formulario-template/formulario-template.component';
+import { HomeComponent } from './components/home/home.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'formulario-template', component: FormularioTemplateComponent },
+  { path: 'formulario-reactivo', component: FormularioReactivoComponent },
+  { path: '**', redirectTo: '', pathMatch: 'full' }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

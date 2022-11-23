@@ -1,0 +1,71 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h1>{{titulo}}</h1>
+                    <form class="mt-3" autocomplete="off" (ngSubmit)="enviarFormulario(usuarioForm)" #usuarioForm="ngForm">
+                        <div class="mb-3">
+                            <input type="text" 
+                                name="usuario" 
+                                #usuario="ngModel"
+                                [class.is-invalid]="usuario.invalid && usuario.touched"
+                                [ngModel]="objUsuario.usuario"
+                                required
+                                class="form-control" 
+                                placeholder="Usuario">
+                            <div class="text-danger" *ngIf="usuario.invalid && usuario.touched">
+                                <span>El Usuario es <strong>obligatorio</strong></span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" 
+                                name="clave" 
+                                #clave="ngModel"
+                                [class.is-invalid]="clave.invalid && clave.touched"
+                                [ngModel]="objUsuario.clave" 
+                                required
+                                minlength="8"
+                                class="form-control" 
+                                placeholder="Clave">
+                            <div class="text-danger" *ngIf="clave.invalid && clave.touched">
+                                <span>La Clave es <strong>obligatoria</strong></span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text"
+                                name="nombre" 
+                                #nombre="ngModel"
+                                [class.is-invalid]="nombre.invalid && nombre.touched"
+                                [ngModel]="objUsuario.nombre" 
+                                required
+                                class="form-control"
+                                placeholder="Nombre">
+                            <div class="text-danger" *ngIf="nombre.invalid && nombre.touched">
+                                <span>El Nombre es <strong>obligatorio</strong></span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text"
+                                name="correo" 
+                                #correo="ngModel"
+                                [class.is-invalid]="correo.invalid && correo.touched"
+                                [ngModel]="objUsuario.correo" 
+                                required
+                                class="form-control"
+                                placeholder="Email">
+                            <div class="text-danger" *ngIf="correo.invalid && correo.touched">
+                                <span>El Email es <strong>obligatorio</strong></span>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <button routerLink="/" type="button" class="btn btn-secondary float-start">Volver</button>
+                            <button type="submit" [disabled]="usuarioForm.invalid" class="btn btn-success float-end">Validar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
