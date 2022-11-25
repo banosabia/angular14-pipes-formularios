@@ -25,12 +25,6 @@
                             </tr>
                             <tr>
                                 <td>{{ nombre }}</td>
-                                <!--ng g p pipes/capitalizado-->
-                                <td>(pipe personalizado)</td>
-                                <td>{{ nombre | capitalizado:true }}</td>
-                            </tr>
-                            <tr>
-                                <td>{{ nombre }}</td>
                                 <td>slice:3</td>
                                 <td>{{ nombre | slice:3 }}</td>
                             </tr>
@@ -143,6 +137,21 @@
                             </tr>
                         </tbody>
                     </table>   
+                </div>
+            </div>
+            <div class="card mt-1">
+                <div class="card-body">                    
+                    <h1 class="text-center">Pipes personalizados</h1>
+                    <div>
+                        Generamos un pipe personalizado: <span class="text-info">ng g p pipes/pipes-personalizados/capitalizado</span><br>
+                        Éste, si recibe true pasa a mayúscula la primera letra de cada palabra de la frase, 
+                        y si recibe false solamente pasa a mayúscula la primera letra de la primera palabra de la frase.<br>
+                        Por lo tanto, si pasamos la frase: "<strong>{{ frase }}</strong>" por el pipe nos queda: 
+                        <ul>
+                            <li>capitalizado:true -> {{ frase | capitalizado:true }}</li>
+                            <li>capitalizado:false -> {{ frase | capitalizado:false }}</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="card mt-1">

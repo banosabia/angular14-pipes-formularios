@@ -7,15 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PipesComponent implements OnInit {
 
-  nombre: string = 'Capitán América';
-  arrayNumeros = [1,2,3,4,5,6,7,8,9,10];
-  PI: number = Math.PI;
-  porcentaje: number = 0.234;
-  salario: number = 1234.5;
-  heroes: string[] = ['Capitán América', 'Superman', 'Batman', 'Hulk', 'Thor'];
-  fecha: Date = new Date();
+  nombre      : string    = 'Capitán América';
+  frase       : string    = 'tenemos esta frase toda en minúsculas';
+  PI          : number    = Math.PI;
+  porcentaje  : number    = 0.234;
+  salario     : number    = 1234.5;
+  heroes      : string[]  = ['Capitán América', 'Superman', 'Batman', 'Hulk', 'Thor'];
+  fecha       : Date      = new Date();
+  idioma      : string    = 'es';
 
-  idioma: string = 'es';
+  arrayNumeros = [1,2,3,4,5,6,7,8,9,10];
 
   heroe = {
     nombre: 'Batman',
@@ -25,6 +26,7 @@ export class PipesComponent implements OnInit {
       calle: 'DC Street'
     }
   };
+
   valorPromesa = new Promise<string>((resolve) => {
     setTimeout(() => {
       resolve('Promesa resuelta');
