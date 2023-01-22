@@ -17,6 +17,7 @@ import { FormularioReactivoComponent } from './components/formularios/formulario
 import { PipesComponent } from './components/pipes/pipes.component';
 import { registerLocaleData } from '@angular/common';
 import { CapitalizadoPipe } from './components/pipes/pipes-personalizados/capitalizado.pipe';
+import { NgifelseComponent } from './components/ngifelse/ngifelse.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CapitalizadoPipe } from './components/pipes/pipes-personalizados/capita
     FormularioTemplateComponent,
     FormularioReactivoComponent,
     PipesComponent,
-    CapitalizadoPipe
+    CapitalizadoPipe,
+    NgifelseComponent
   ],
   imports: [
     BrowserModule,
