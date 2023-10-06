@@ -52,10 +52,11 @@
                                 [class.is-invalid]="correo.invalid && correo.touched"
                                 [ngModel]="objUsuario.correo" 
                                 required
+                                pattern="^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})"
                                 class="form-control"
                                 placeholder="Email">
                             <div class="text-danger" *ngIf="correo.invalid && correo.touched">
-                                <span>El Email es <strong>obligatorio</strong></span>
+                                <span>El Email es <strong>incorrecto</strong></span>
                             </div>
                         </div>
                         
