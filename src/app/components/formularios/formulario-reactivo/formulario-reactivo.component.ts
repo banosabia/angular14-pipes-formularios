@@ -14,10 +14,10 @@ export class FormularioReactivoComponent implements OnInit {
   constructor(private fg: FormBuilder) {
 
     this.usuarioForm = this.fg.group({
-      usuario: ['', Validators.required],
-      clave: ['', [Validators.required, Validators.minLength(8)]],
-      nombre: ['', Validators.required],
-      email: ['', Validators.required]
+      usuario:  ['', Validators.required],
+      clave:    ['', [Validators.required, Validators.minLength(8)]],
+      nombre:   ['', Validators.required],
+      email:    ['', [Validators.required, Validators.pattern(/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/)]]
     });
    }
 
@@ -25,7 +25,8 @@ export class FormularioReactivoComponent implements OnInit {
   }
 
   esCampoInvalido(nombreCampo: string) {
-    return this.usuarioForm.get(nombreCampo)?.hasError('required') && this.usuarioForm.get(nombreCampo)?.touched;
+    return this.usuarioForm.get(nombreCampo)?.invalid && this.usuarioForm.get(nombreCampo)?.touched;
+    //return this.usuarioForm.get(nombreCampo)?.hasError('required') && this.usuarioForm.get(nombreCampo)?.touched;
   }
 
   enviarFormulario() {

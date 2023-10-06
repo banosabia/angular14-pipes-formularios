@@ -14,7 +14,7 @@
                         <div class="mb-3">
                             <input type="password" formControlName="clave" class="form-control" placeholder="Clave" [class.is-invalid]="esCampoInvalido('clave')">
                             <small class="text-danger" *ngIf="esCampoInvalido('clave')">
-                                La Clave es <strong>obligatoria</strong>
+                                La Clave es <strong>obligatoria</strong>. Mín. <strong>8 caracteres</strong>
                             </small>
                         </div>
                         <div class="mb-3">
@@ -26,7 +26,7 @@
                         <div class="mb-3">
                             <input type="text" formControlName="email" class="form-control" placeholder="Email" [class.is-invalid]="esCampoInvalido('email')">
                             <small class="text-danger" *ngIf="esCampoInvalido('email')">
-                                El Email es <strong>obligatorio</strong>
+                                El Email es <strong>incorrecto</strong>
                             </small>
                         </div>
       
@@ -34,7 +34,10 @@
                             <button routerLink="/" type="button" class="btn btn-secondary float-start">Volver</button>
                             <button type="submit" [disabled]="usuarioForm.invalid" class="btn btn-success float-end">Validar</button>
                         </div>
-                    </form>
+                    </form>                    
+                </div>
+                <div class="text-center" [class]="usuarioForm.status==='INVALID'?'text-danger':'text-success'">
+                    <span>FORM IS {{usuarioForm.status}}</span>
                 </div>
             </div>
         </div>
