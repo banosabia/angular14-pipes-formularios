@@ -26,7 +26,6 @@ export class FormularioReactivoComponent implements OnInit {
 
   esCampoInvalido(nombreCampo: string) {
     return this.usuarioForm.get(nombreCampo)?.invalid && this.usuarioForm.get(nombreCampo)?.touched;
-    //return this.usuarioForm.get(nombreCampo)?.hasError('required') && this.usuarioForm.get(nombreCampo)?.touched;
   }
 
   enviarFormulario() {
